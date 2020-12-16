@@ -1,12 +1,18 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Pamphlet from "@/views/Pamphlet";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
+    name: "Pamphlet",
+    component: Pamphlet
+  },
+  {
+    path: "/test",
     name: "Home",
     component: Home
   },

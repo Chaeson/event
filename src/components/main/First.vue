@@ -1,10 +1,14 @@
 <template>
 <!--  <v-app v-bind:style="{width:'100%', height: 'auto', backgroundColor:'red', backgroundSize:'cover', position:'relative'}">-->
   <v-app>
-    <v-app v-bind:style="{background:'none'}">
-      <span class="black--text" v-bind:style="{position:'absolute'}">asd</span>
-    </v-app>
-    <span class="black--text" v-bind:style="{position:'absolute'}">asd</span>
+    <v-spacer></v-spacer>
+    <v-container>
+      <v-row no-gutters outline>
+        <v-col md="12" offset-md="2">
+          <v-img src="@/assets/main/btn_service_view.png" :style="{width: '20%', height: '100%'}"/>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-app>
 </template>
 
@@ -15,4 +19,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

@@ -1,12 +1,8 @@
 <template>
   <v-app>
-    <v-content v-bind:style="{opacity:this.first.opacity , backgroundImage:'./../assets/main/bg_01main_02.jpg'}">
-      <First/>
-    </v-content>
-    <v-content v-bind:style="{opacity:this.second.opacity}">
-      <Second/>
-    </v-content>
-    <v-img src="@/assets/main/bg_01main_03.jpg" app v-bind:style="{opacity:this.third.opacity}"/>
+    <First :style="{opacity:this.first.opacity ,backgroundSize: '100%' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_01.jpg') + ')',  width:'auto', height: 'auto' }"/>
+    <Second :style="{opacity:this.second.opacity, backgroundSize: '100%' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_02.jpg') + ')',  width:'auto', height: 'auto' }"/>
+    <Third :style="{opacity:this.third.opacity,backgroundSize: '100%' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_03.jpg') + ')',  width:'auto', height: 'auto' }"/>
   </v-app>
 </template>
 
@@ -15,7 +11,8 @@ export default {
   name: "Main",
   components:{
     First:()=>import('@/components/main/First'),
-    Second:()=>import('@/components/main/Second')
+    Second:()=>import('@/components/main/Second'),
+    Third:()=>import('@/components/main/Third')
   },
   data:()=>({
     text:'메인 페이지',

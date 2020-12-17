@@ -1,18 +1,15 @@
 <template>
-  <v-app>
-    <v-img class="background" ref="background" src="@/assets/background.jpg"/>
-    <Header @change-page="changePage"/>
-    <v-main class="pa-0">
-      <component v-bind:is="view"/>
-    </v-main>
-  </v-app>
+  <v-container fluid ma-0 pa-0 fill-height>
+<!--    <Header @change-page="changePage" :style="{width: '100%', border:'solid 1px cyan'}"/>-->
+    <component v-bind:is="view" @click="this.onPosition"/>
+  </v-container>
 </template>
 
 <script>
 export default {
   name: "Pamphlet",
   components:{
-    Header:()=>import('@/components/Header'),
+    // Header:()=>import('@/components/Header'),
     Main:()=>import('@/components/Main'),
     Service:()=>import('@/components/Service'),
     Product:()=>import('@/components/Product'),

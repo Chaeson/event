@@ -1,9 +1,9 @@
 <template>
-  <v-app>
-    <First :style="{opacity:this.first.opacity ,backgroundSize: '100%' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_01.jpg') + ')',  width:'auto', height: 'auto' }"/>
-    <Second :style="{opacity:this.second.opacity, backgroundSize: '100%' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_02.jpg') + ')',  width:'auto', height: 'auto' }"/>
-    <Third :style="{opacity:this.third.opacity,backgroundSize: '100%' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_03.jpg') + ')',  width:'auto', height: 'auto' }"/>
-  </v-app>
+    <v-main>
+      <First :style="{opacity:this.first.opacity ,backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_01.jpg') + ')',  width:'auto', height:'auto' }"/>
+      <Second :style="{opacity:this.second.opacity, backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_02.jpg') + ')',  width:'auto', height: 'auto' }"/>
+      <Third :style="{opacity:this.third.opacity,backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_03.jpg') + ')',  width:'auto', height: 'auto' }"/>
+    </v-main>
 </template>
 
 <script>

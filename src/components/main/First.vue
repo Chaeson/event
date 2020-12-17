@@ -1,20 +1,37 @@
 <template>
-<!--  <v-app v-bind:style="{width:'100%', height: 'auto', backgroundColor:'red', backgroundSize:'cover', position:'relative'}">-->
-  <v-app>
-    <v-spacer></v-spacer>
-    <v-container>
-      <v-row no-gutters outline>
-        <v-col md="12" offset-md="2">
-          <v-img src="@/assets/main/btn_service_view.png" :style="{width: '20%', height: '100%'}"/>
-        </v-col>
-      </v-row>
-    </v-container>
+  <v-app :style="{ border:'1px solid cyan'}">
+      <v-container ma-0 pa-0 fill-height>
+
+      </v-container>
   </v-app>
 </template>
 
 <script>
+import ImageMap from 'image-map'
 export default {
-  name: "First"
+  name: "First",
+  data:()=>({
+    windowSize:{
+      x:0,
+      y:0
+    },
+    align:{
+      center:'center',
+      end:'end'
+    }
+  }),
+  created() {
+    ImageMap('img[serviceMove]')
+  },
+  mounted() {
+    this.onResize()
+  },
+  methods:{
+    onResize(){
+      this.windowSize.x=window.innerWidth
+      this.windowSize.y=window.innerHeight
+    }
+  }
 }
 </script>
 

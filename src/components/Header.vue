@@ -1,5 +1,5 @@
 <template>
-  <v-container :style="{padding:'0'}">
+  <v-container>
     <v-row>
       <v-col cols="12" pa-0>
         <v-app-bar color="#8DBDE5" flat>

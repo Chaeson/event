@@ -1,28 +1,40 @@
 <template>
-  <v-app app class="ma-0 pa-0" :style="{width:'100%', height:'100%'}">
+  <v-app :style="{ border:'1px solid cyan'} " >
+    <v-card width="100%" max-height="75%" height="75%" flat style="background: none">
+      <!-- 여백 ...-->
+    </v-card>
+    <v-card width="100%" max-height="10%" height="10%" flat style="background: none">
+      <v-row no-gutters>
+        <v-spacer></v-spacer>
+        <v-col cols="2" style="border: 1px solid cyan" >
+          <v-img src="@/assets/main/btn_view.png">
+          </v-img>
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col cols="2" style="border: 1px solid cyan">
+          <v-img src="@/assets/main/btn_view.png">
+          </v-img>
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col cols="2" style="border: 1px solid cyan">
+          <v-img src="@/assets/main/btn_view.png">
+          </v-img>
+        </v-col>
+        <v-spacer></v-spacer>
+      </v-row>
+    </v-card>
+    <!-- 아래 하단 -->
     <v-spacer></v-spacer>
-    <v-layout row wrap align-start >
-      <v-spacer></v-spacer>
-      <v-flex align-self-end :style="{display:'block', border:'solid 2px cyan'}" md2>
-        <div>상세 버튼1</div>
-      </v-flex>
-      <v-spacer></v-spacer>
-      <v-flex align-self-end :style="{display:'block', border:'solid 2px cyan'}" md2>
-        <div>상세 버튼2</div>
-      </v-flex>
-      <v-spacer></v-spacer>
-      <v-flex align-self-end :style="{display:'block', border:'solid 2px cyan'}" md2>
-        <div>상세 버튼3</div>
-      </v-flex>
-      <v-spacer></v-spacer>
-    </v-layout>
-    <v-layout row wrap align-center>
-      <v-spacer></v-spacer>
-      <v-flex  align-self-end :style="{display:'block' , border:'solid 2px black'}" md1>
-        <div>스크롤</div>
-      </v-flex>
-      <v-spacer></v-spacer>
-    </v-layout>
+    <v-card width="100%" max-height="10%" height="10%" flat style="background: none">
+      <v-row>
+        <v-spacer></v-spacer>
+        <v-col cols="1" style="border: 1px solid cyan">
+          <v-img src="@/assets/main/scrolldown.png">
+          </v-img>
+        </v-col>
+        <v-spacer></v-spacer>
+      </v-row>
+    </v-card>
   </v-app>
 </template>
 

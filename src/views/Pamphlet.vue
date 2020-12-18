@@ -1,7 +1,7 @@
 <template>
   <v-container fluid ma-0 pa-0 fill-height>
-<!--    <Header @change-page="changePage" :style="{width: '100%', border:'solid 1px cyan'}"/>-->
-    <component v-bind:is="view" @click="this.onPosition"/>
+    <Header @change-page="changePage" :style="{width: '100%', border:'solid 1px cyan'}"/>
+    <component v-bind:is="view"/>
   </v-container>
 </template>
 
@@ -9,11 +9,11 @@
 export default {
   name: "Pamphlet",
   components:{
-    // Header:()=>import('@/components/Header'),
+    Header:()=>import('@/components/Header'),
     Main:()=>import('@/components/Main'),
     Service:()=>import('@/components/Service'),
-    Product:()=>import('@/components/Product'),
-    Question:()=>import('@/components/Question')
+    // Product:()=>import('@/components/Product'),
+    // Question:()=>import('@/components/Question')
   },
   data: () => ({
     view: 'Main'

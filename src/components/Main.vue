@@ -1,9 +1,20 @@
 <template>
-    <v-main>
-      <First :style="{opacity:this.first.opacity ,backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_01.jpg') + ')',  width:'auto', height:'auto' }"/>
-      <Second :style="{opacity:this.second.opacity, backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_02.jpg') + ')',  width:'auto', height: 'auto' }"/>
-      <Third :style="{opacity:this.third.opacity,backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_03.jpg') + ')',  width:'auto', height: 'auto' }"/>
-    </v-main>
+  <v-container>
+    <v-app :style="{border:'1px solid cyan'}">
+      <v-card>
+        <First :style="{opacity:this.first.opacity ,backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_01.jpg') + ')',  width:'100%', height:'auto' }"/>
+<!--        <First :style="{opacity:this.first.opacity, border:'1px solid black', width:'100%', height:'auto' }"/>-->
+      </v-card>
+      <v-card>
+        <Second :style="{opacity:this.second.opacity, backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_02.jpg') + ')',  width:'100%', height: 'auto' }"/>
+<!--        <Second :style="{opacity:this.second.opacity,  width:'auto', height: 'auto' }"/>-->
+      </v-card>
+      <v-card>
+        <Third :style="{opacity:this.third.opacity,backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_03.jpg') + ')',  width:'100%', height: 'auto' }"/>
+<!--        <Third :style="{opacity:this.third.opacity,  width:'auto', height: 'auto' }"/>-->
+      </v-card>
+    </v-app>
+  </v-container>
 </template>
 
 <script>

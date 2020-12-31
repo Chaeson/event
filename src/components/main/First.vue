@@ -1,8 +1,7 @@
 <template>
   <v-container  class="fill-height"
            fluid
-           :style="{padding: this.main.padding, minHeight:'100%', border: '1px solid cyan'}">
-
+           :style="{padding: this.main.padding, minWidth:'80%', border: '1px solid cyan'}">
   </v-container>
 </template>
 

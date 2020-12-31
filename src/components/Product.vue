@@ -9,7 +9,7 @@
     <slide class="bg-third">
 
     </slide>
-    <hooper-navigation slot="hooper-addons"></hooper-navigation>
+    <hooper-navigation slot="hooper-addons" id="productNavi"></hooper-navigation>
   </hooper>
 </template>
 
@@ -52,5 +52,15 @@ export default {
 }
 #product > .hooper-next{
   right: 10%;
+}
+#productNavi > button.hooper-prev{
+  left: 0%;
+  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_04.jpg') no-repeat center center;
+  background-size: contain;
+}
+#productNavi > button.hooper-next{
+  right: 0%;
+  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_04.jpg') no-repeat center center;
+  background-size: contain;
 }
 </style>

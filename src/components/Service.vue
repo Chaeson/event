@@ -12,7 +12,7 @@
     <slide class="bg-forth">
 
     </slide>
-    <hooper-navigation slot="hooper-addons"></hooper-navigation>
+    <hooper-navigation slot="hooper-addons" id="serviceNavi"></hooper-navigation>
   </hooper>
 </template>
 
@@ -58,5 +58,15 @@ export default {
 }
 #service > .hooper-next{
   right: 10%;
+}
+#serviceNavi > button.hooper-prev{
+  left: 0%;
+  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_04.jpg') no-repeat center center;
+  background-size: contain;
+}
+#serviceNavi > button.hooper-next{
+  right: 0%;
+  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_04.jpg') no-repeat center center;
+  background-size: contain;
 }
 </style>

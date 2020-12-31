@@ -1,7 +1,7 @@
 <template>
   <hooper :vertical="true" :centerMode="true" :trim-white-space="false" :mouse-drag="false" id="mainPage">
     <slide style="border: 1px solid red ;" class="bg-first">
-
+      <First/>
     </slide>
     <slide style="border: 1px solid green;" class="bg-second">
 
@@ -9,7 +9,7 @@
     <slide style="border: 1px solid blue ;" class="bg-third">
 
     </slide>
-    <hooper-navigation slot="hooper-addons" id="navi"></hooper-navigation>
+    <hooper-navigation slot="hooper-addons" id="mainNavi"></hooper-navigation>
   </hooper>
 </template>
 
@@ -23,7 +23,7 @@ import 'hooper/dist/hooper.css';
 export default {
   name: "Main",
   components:{
-    //First:()=>import('@/components/main/First'),
+    First:()=>import('@/components/main/First'),
     // Second:()=>import('@/components/main/Second'),
     // Third:()=>import('@/components/main/Third'),
     Hooper, Slide, HooperNavigation
@@ -76,10 +76,25 @@ export default {
 }
 </style>
 <style>
-#navi > button.hooper-prev{
-  left: 50%;
+.hooper {
+  height: 90vh;
 }
-#navi > button.hooper-next{
+#mainNavi > .hooper-prev{
   left: 50%;
+  background: url('http://pamphlet.ubcn.co.kr/image/main/scrolldown.png') no-repeat center center;
+  background-size: contain;
 }
+#mainNavi > .hooper-prev.is-disabled{
+  display: none;
+}
+#mainNavi > .hooper-next.is-disabled{
+  opacity: 1;
+  cursor: pointer;
+}
+#mainNavi > button.hooper-next{
+  left: 50%;
+  background: url('http://pamphlet.ubcn.co.kr/image/main/scrolldown.png') no-repeat center center;
+  background-size: contain;
+}
+
 </style>

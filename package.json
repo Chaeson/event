@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest ./webapp/",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "emailjs-com": "^2.6.4",
     "hooper": "^0.3.4",
     "image-map": "^2.0.1",
     "vue": "^2.6.11",

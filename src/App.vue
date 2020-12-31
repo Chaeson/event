@@ -1,7 +1,5 @@
 <template class="overflow-y-auto overflow-x-hidden">
-  <v-container>
-    <router-view></router-view>
-  </v-container>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -36,3 +34,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.container{
+  max-width: 100%;
+}
+</style>

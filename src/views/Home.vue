@@ -1,9 +1,6 @@
 <template>
   <div class="home">
     <v-img class="background" ref="background" src="../assets/background.jpg" v-bind:style="{transform:this.background.transform}"/>
-    <v-img src="../assets/01main_01.jpg" v-bind:style="{opacity:this.first.opacity, offsetHeight:this.first.offsetHeight}"/>
-    <v-img src="../assets/01main_02.jpg" v-bind:style="{opacity:this.second.opacity, offsetHeight:this.second.offsetHeight}"/>
-    <v-img src="../assets/01main_03.jpg" v-bind:style="{opacity:this.third.opacity, offsetHeight:this.third.offsetHeight}"/>
   </div>
 </template>
 

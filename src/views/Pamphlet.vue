@@ -1,8 +1,9 @@
 <template>
-  <v-container fluid ma-0 pa-0 fill-height>
-    <Header @change-page="changePage" :style="{width: '100%', border:'solid 1px cyan'}"/>
-    <component v-bind:is="view"/>
-  </v-container>
+<!--  <v-container fluid ma-0 pa-0 fill-height :style="{ backgroundColor: this.headerColor}">-->
+  <v-main ma-0 pa-0 :style="{ padding:this.paddingVal}">
+    <Header @change-page="changePage" v-bind:mainColor="headerColor" v-show="this.headerShow"/>
+    <component @change-page="changePage" v-bind:is="view" style="padding-top: 0; padding-left: 0;"/>
+  </v-main>
 </template>
 
 <script>
@@ -12,15 +13,35 @@ export default {
     Header:()=>import('@/components/Header'),
     Main:()=>import('@/components/Main'),
     Service:()=>import('@/components/Service'),
-    // Product:()=>import('@/components/Product'),
-    // Question:()=>import('@/components/Question')
+    Product:()=>import('@/components/Product'),
+    Question:()=>import('@/components/Question'),
+    RoadMap:()=>import('@/components/RoadMap')
+  },
+  created() {
   },
   data: () => ({
-    view: 'Main'
+    view: 'Main',
+    headerColor:'#8DBDE5',
+    headerShow:'true',
+    paddingVal:'64px 0px 0px'
   }),
   methods:{
     changePage(menu){
-      console.log('!!'+menu)
+      console.log('??'+menu)
+      console.log('??'+this.headerColor)
+      if(menu=='Service' || menu=='Product')
+        this.headerColor='#999999'
+      else
+        this.headerColor='#8DBDE5'
+
+      if(menu=='RoadMap'){
+        this.headerShow=false
+        this.paddingVal='0px'
+      }else{
+        this.headerShow=true
+        this.paddingVal='64px 0px 0px'
+      }
+      console.log('??'+this.headerColor)
       this.view=menu
     }
   }

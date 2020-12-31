@@ -1,18 +1,18 @@
-<template style="max-width: 100%">
-  <hooper>
-    <slide style="max-height: 100%">
-      <v-img src="@/assets/service/02sub_01.jpg"/>
+<template>
+  <hooper :vertical="false" :centerMode="true" :trim-white-space="false" id="service">
+    <slide class="bg-first">
+
     </slide>
-    <slide>
-      <v-img src="@/assets/service/02sub_02.jpg"/>
+    <slide class="bg-second">
+
     </slide>
-    <slide>
-      <v-img src="@/assets/service/02sub_03.jpg"/>
+    <slide class="bg-third">
+
     </slide>
-    <slide>
-      <v-img src="@/assets/service/02sub_04.jpg"/>
+    <slide class="bg-forth">
+
     </slide>
-    <hooper-pagination slot="hooper-addons"></hooper-pagination>
+    <hooper-navigation slot="hooper-addons"></hooper-navigation>
   </hooper>
 </template>
 
@@ -20,13 +20,13 @@
 import {
   Hooper,
   Slide,
-  Pagination as HooperPagination
+  Navigation as HooperNavigation
 } from 'hooper';
 import 'hooper/dist/hooper.css';
 export default {
   name: "Service",
   components:{
-    Hooper, Slide, HooperPagination
+    Hooper, Slide, HooperNavigation
   },
   data:()=>({
     text:'서비스 소개 페이지'
@@ -35,5 +35,28 @@ export default {
 </script>
 
 <style scoped>
-
+.bg-first {
+  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_01.jpg') no-repeat center center;
+  background-size: contain;
+}
+.bg-second {
+  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_02.jpg') no-repeat center center;
+  background-size: contain;
+}
+.bg-third {
+  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_03.jpg') no-repeat center center;
+  background-size: contain;
+}
+.bg-forth {
+  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_04.jpg') no-repeat center center;
+  background-size: contain;
+}
+</style>
+<style>
+#service > .hooper-prev{
+  left: 10%;
+}
+#service > .hooper-next{
+  right: 10%;
+}
 </style>

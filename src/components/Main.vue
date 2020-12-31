@@ -1,40 +1,46 @@
 <template>
-  <v-container>
-    <v-app :style="{border:'1px solid cyan'}">
-      <v-card>
-        <First :style="{opacity:this.first.opacity ,backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_01.jpg') + ')',  width:'100%', height:'auto' }"/>
-<!--        <First :style="{opacity:this.first.opacity, border:'1px solid black', width:'100%', height:'auto' }"/>-->
-      </v-card>
-      <v-card>
-        <Second :style="{opacity:this.second.opacity, backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_02.jpg') + ')',  width:'100%', height: 'auto' }"/>
-<!--        <Second :style="{opacity:this.second.opacity,  width:'auto', height: 'auto' }"/>-->
-      </v-card>
-      <v-card>
-        <Third :style="{opacity:this.third.opacity,backgroundSize: '100%', backgroundRepeat:'no-repeat' ,backgroundImage: 'url(' + require('@/assets/main/bg_01main_03.jpg') + ')',  width:'100%', height: 'auto' }"/>
-<!--        <Third :style="{opacity:this.third.opacity,  width:'auto', height: 'auto' }"/>-->
-      </v-card>
-    </v-app>
-  </v-container>
+  <hooper :vertical="true" :centerMode="true" :trim-white-space="false" :mouse-drag="false" id="mainPage">
+    <slide style="border: 1px solid red ;" class="bg-first">
+
+    </slide>
+    <slide style="border: 1px solid green;" class="bg-second">
+
+    </slide>
+    <slide style="border: 1px solid blue ;" class="bg-third">
+
+    </slide>
+    <hooper-navigation slot="hooper-addons" id="navi"></hooper-navigation>
+  </hooper>
 </template>
 
 <script>
+import {
+  Hooper,
+  Slide,
+  Navigation as HooperNavigation
+} from 'hooper';
+import 'hooper/dist/hooper.css';
 export default {
   name: "Main",
   components:{
-    First:()=>import('@/components/main/First'),
-    Second:()=>import('@/components/main/Second'),
-    Third:()=>import('@/components/main/Third')
+    //First:()=>import('@/components/main/First'),
+    // Second:()=>import('@/components/main/Second'),
+    // Third:()=>import('@/components/main/Third'),
+    Hooper, Slide, HooperNavigation
+  },
+  created() {
   },
   data:()=>({
     text:'메인 페이지',
     first:{
-      opacity:1
+      main:{
+        backgroundImg:'@/assets/main/bg_01main_01.jpg',
+        padding:'0px'
+      }
     },
     second:{
-      opacity:1 // 1000 ~
     },
     third:{
-      opacity:1 // 2000 ~
     }
   }),
   mounted() {
@@ -46,11 +52,34 @@ export default {
   methods:{
     handleScroll(){
       console.log(window.scrollY)
+    },
+    changePage(menu){
+      console.log('Main > '+menu)
+      this.$emit('change-page',menu,event)
     }
   }
 }
 </script>
 
 <style scoped>
-
+.bg-first {
+  background: url('http://pamphlet.ubcn.co.kr/image/main/bg_01main_01.jpg') no-repeat center center;
+  background-size: contain;
+}
+.bg-second {
+  background: url('http://pamphlet.ubcn.co.kr/image/main/bg_01main_02.jpg') no-repeat center center;
+  background-size: contain;
+}
+.bg-third {
+  background: url('http://pamphlet.ubcn.co.kr/image/main/bg_01main_03.jpg') no-repeat center center;
+  background-size: contain;
+}
+</style>
+<style>
+#navi > button.hooper-prev{
+  left: 50%;
+}
+#navi > button.hooper-next{
+  left: 50%;
+}
 </style>

@@ -1,10 +1,15 @@
 <template>
   <hooper :vertical="true" :centerMode="true" :trim-white-space="false" :mouse-drag="false" id="mainPage">
     <slide style="border: 1px solid red ;" class="bg-first">
-      <First/>
+      <First @change-page="changePage"/>
     </slide>
     <slide style="border: 1px solid green;" class="bg-second">
-
+<!--      <hooper :center-mode="true">-->
+<!--        <slide style="border: 1px solid red ;" class="bg-second">-->
+<!--          <Second/>-->
+<!--        </slide>-->
+<!--      </hooper>-->
+      <Second/>
     </slide>
     <slide style="border: 1px solid blue ;" class="bg-third">
 
@@ -24,7 +29,7 @@ export default {
   name: "Main",
   components:{
     First:()=>import('@/components/main/First'),
-    // Second:()=>import('@/components/main/Second'),
+    Second:()=>import('@/components/main/Second'),
     // Third:()=>import('@/components/main/Third'),
     Hooper, Slide, HooperNavigation
   },
@@ -38,8 +43,7 @@ export default {
         padding:'0px'
       }
     },
-    second:{
-    },
+    service:'http://pamphlet.ubcn.co.kr/pamphlet/image/main/btn_view.png',
     third:{
     }
   }),
@@ -93,7 +97,7 @@ export default {
 }
 #mainNavi > button.hooper-next{
   left: 50%;
-  background: url('http://pamphlet.ubcn.co.kr/image/main/scrolldown.png') no-repeat center center;
+  background: url('http://pamphlet.ubcn.co.kr/image/main/scrolldown.png') no-repeat;
   background-size: contain;
 }
 

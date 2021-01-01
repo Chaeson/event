@@ -3,10 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
-import vuescroll from "vue-scroll";
-Vue.use(vuescroll, { debounce: 600 });
-Vue.config.productionTip = false;
+import EnlargeableImage from '@diracleo/vue-enlargeable-image';
 
+Vue.use(EnlargeableImage);
+
+Vue.config.productionTip = false;
 new Vue({
   router,
   store,

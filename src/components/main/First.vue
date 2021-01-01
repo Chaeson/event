@@ -1,7 +1,13 @@
 <template>
   <v-container  class="fill-height"
            fluid
-           :style="{padding: this.main.padding, minWidth:'80%', border: '1px solid cyan'}">
+           :style="{border: '1px solid cyan'}">
+    <v-img :src="this.serviceDetail"
+           id="serviceDetail"
+           contain
+           :position="servicePosition"
+           @click="pageMove">
+    </v-img>
   </v-container>
 </template>
 
@@ -9,11 +15,8 @@
 export default {
   name: "First",
   data:()=>({
-    main:{
-      backgroundImg:'@/assets/main/bg_01main_01.jpg',
-      padding:'0px',
-      height:'100%'
-    }
+    serviceDetail:'http://pamphlet.ubcn.co.kr/pamphlet/image/main/btn_service_view.png',
+    servicePosition:'80% 70%'
   }),
   created() {
   },
@@ -32,5 +35,12 @@ export default {
 </script>
 
 <style scoped>
-
+#serviceDetail{
+  min-height: 65px;
+  min-width: 400px;
+  max-height: 65px;
+  max-width: 400px;
+  background-size: contain;
+  cursor: pointer;
+}
 </style>

@@ -1,23 +1,14 @@
 <template>
   <v-app :style="{ padding: '0px'}">
-    <v-card :style="{border: '1px solid black', height:'100%'}" id="roadMapCard">
-      <v-btn id="menuBtn">
-        <v-img :src="this.menu"></v-img>
-      </v-btn>
-      <v-row align="center">
-        <v-spacer></v-spacer>
-        <v-col cols="2" :style="{border: '1px solid cyan'}">
-          <v-img :src="this.service"></v-img>
-          <v-img :src="this.product"></v-img>
-          <v-img :src="this.product1"></v-img>
-          <v-img :src="this.product2"></v-img>
-          <v-img :src="this.product3"></v-img>
-          <v-img :src="this.question"></v-img>
-          <v-img :src="this.site"></v-img>
-        </v-col>
-        <v-spacer></v-spacer>
-      </v-row>
-    </v-card>
+    <v-img :src="this.menu" id="menuBtn" class="ml-auto"></v-img>
+    <v-img :src="this.service" id="serviceButton" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.product" id="productButton" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.product1" id="product01Btn" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.product2" id="product02Btn" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.product3" id="product03Btn" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.question" id="questionBtn" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.site" id="siteBtn" class="ml-auto mr-auto"></v-img>
+    <v-spacer></v-spacer>
   </v-app>
 </template>
 
@@ -33,6 +24,7 @@ export default {
     product3:'http://pamphlet.ubcn.co.kr/image/roadmap/menu02-3.png',
     question:'http://pamphlet.ubcn.co.kr/image/roadmap/menu03.png',
     site:'http://pamphlet.ubcn.co.kr/image/roadmap/btn_site.png',
+    centerPosition: 'center center'
   })
 }
 </script>
@@ -44,12 +36,60 @@ export default {
 #menuBtn{
   min-height: 32px;
   max-height: 32px;
-  min-width: 32px;
-  max-width: 32px;
-  right: 0%;
-  left: 98%;
+  min-width: 41px;
+  max-width: 41px;
   top: 10px;
   background: none;
+  background-size: contain;
+}
+#serviceButton{
+  min-width: 289px;
+  max-width: 289px;
+  min-height: 58px;
+  max-height: 58px;
+  margin-top: 10%;
+}
+#productButton{
+  max-width: 231px;
+  max-height: 67px;
+  min-width: 231px;
+  min-height: 67px;
+  margin-top: 2%;
+}
+#product01Btn{
+  max-width: 98px;
+  max-height: 27px;
+  min-width: 98px;
+  min-height: 27px;
+  margin-top: 1%;
+}
+#product02Btn{
+  max-width: 96px;
+  max-height: 27px;
+  min-width: 96px;
+  min-height: 27px;
+  margin-top: 1%;
+}
+#product03Btn{
+  max-width: 74px;
+  max-height: 27px;
+  min-width: 74px;
+  min-height: 27px;
+  margin-top: 1%;
+}
+#questionBtn{
+  max-width: 231px;
+  max-height: 68px;
+  min-width: 231px;
+  min-height: 68px;
+  margin-top: 2%;
+}
+#siteBtn{
+  max-width: 321px;
+  max-height: 28px;
+  min-width: 321px;
+  min-height: 28px;
+  margin-top: 10%;
 }
 #roadMapCard > button {
 
@@ -57,7 +97,7 @@ export default {
 #roadMapCard{
   background: none;
 }
-.v-image__image--cover{
-
+.text-right .v-image {
+  display: inline-block;
 }
 </style>

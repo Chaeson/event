@@ -1,18 +1,13 @@
 <template>
   <hooper :vertical="true" :centerMode="true" :trim-white-space="false" :mouse-drag="false" id="mainPage">
-    <slide style="border: 1px solid red ;" class="bg-first">
-      <First @change-page="changePage"/>
+    <slide style="border: 1px solid red ;" class="customBack">
+      <First @change-page="changePage" class="bg-first"/>
     </slide>
-    <slide style="border: 1px solid green;" class="bg-second">
-<!--      <hooper :center-mode="true">-->
-<!--        <slide style="border: 1px solid red ;" class="bg-second">-->
-<!--          <Second/>-->
-<!--        </slide>-->
-<!--      </hooper>-->
-      <Second/>
+    <slide style="border: 1px solid green;" class="customBack">
+      <Second class="bg-second" />
     </slide>
-    <slide style="border: 1px solid blue ;" class="bg-third">
-
+    <slide style="border: 1px solid blue ;" class="customBack">
+      <Third class="bg-third"/>
     </slide>
     <hooper-navigation slot="hooper-addons" id="mainNavi"></hooper-navigation>
   </hooper>
@@ -30,7 +25,7 @@ export default {
   components:{
     First:()=>import('@/components/main/First'),
     Second:()=>import('@/components/main/Second'),
-    // Third:()=>import('@/components/main/Third'),
+    Third:()=>import('@/components/main/Third'),
     Hooper, Slide, HooperNavigation
   },
   created() {
@@ -54,13 +49,13 @@ export default {
     document.removeEventListener('scroll', this.handleScroll)
   },
   methods:{
-    handleScroll(){
-      console.log(window.scrollY)
-    },
     changePage(menu){
       console.log('Main > '+menu)
       this.$emit('change-page',menu,event)
-    }
+    },
+
+  },
+  watch:{
   }
 }
 </script>
@@ -87,6 +82,7 @@ export default {
   left: 50%;
   background: url('http://pamphlet.ubcn.co.kr/image/main/scrolldown.png') no-repeat center center;
   background-size: contain;
+  display: none;
 }
 #mainNavi > .hooper-prev.is-disabled{
   display: none;
@@ -94,11 +90,16 @@ export default {
 #mainNavi > .hooper-next.is-disabled{
   opacity: 1;
   cursor: pointer;
+  background: url("http://pamphlet.ubcn.co.kr/image/main/top.png") no-repeat center center;
+  background-size: contain;
+  display: none;
 }
 #mainNavi > button.hooper-next{
   left: 50%;
   background: url('http://pamphlet.ubcn.co.kr/image/main/scrolldown.png') no-repeat;
   background-size: contain;
 }
-
+.customBack{
+  background-color: #8DBDE5;
+}
 </style>

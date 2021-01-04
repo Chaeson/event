@@ -60,13 +60,24 @@ export default {
   right: 10%;
 }
 #serviceNavi > button.hooper-prev{
-  left: 0%;
-  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_04.jpg') no-repeat center center;
+  left: 11%;
+  background: url('http://pamphlet.ubcn.co.kr/image/service/btn_scroll_r.png') no-repeat center center;
   background-size: contain;
 }
 #serviceNavi > button.hooper-next{
-  right: 0%;
-  background: url('http://pamphlet.ubcn.co.kr/image/service/02sub_04.jpg') no-repeat center center;
+  right: 11%;
+  background: url('http://pamphlet.ubcn.co.kr/image/service/btn_scroll_l.png') no-repeat center center;
   background-size: contain;
+}
+#service > .hooper-list > .hooper-track{
+  height: 90vh;
+}
+
+#serviceNavi > .hooper-prev.is-disabled{
+  display: none;
+}
+
+#serviceNavi > .hooper-next.is-disabled{
+  display: none;
 }
 </style>

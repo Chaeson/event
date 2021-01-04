@@ -1,6 +1,7 @@
 <template>
   <hooper :vertical="true" :center-mode="true" >
-    <slide style="border: 1px solid red ;" class="bg-third">
+    <slide style="border: 1px solid red ;">
+      <Third class="bg-third" />
     </slide>
   </hooper>
 </template>
@@ -15,6 +16,7 @@ import 'hooper/dist/hooper.css';
 export default {
   name: "Question",
   components:{
+    Third:()=>import('@/components/main/Third'),
     Hooper, Slide
   },
   data:()=>({

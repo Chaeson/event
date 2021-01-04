@@ -1,13 +1,31 @@
 <template>
   <v-app :style="{ padding: '0px'}">
-    <v-img :src="this.menu" id="menuBtn" class="ml-auto"></v-img>
-    <v-img :src="this.service" id="serviceButton" class="ml-auto mr-auto"></v-img>
-    <v-img :src="this.product" id="productButton" class="ml-auto mr-auto"></v-img>
-    <v-img :src="this.product1" id="product01Btn" class="ml-auto mr-auto"></v-img>
-    <v-img :src="this.product2" id="product02Btn" class="ml-auto mr-auto"></v-img>
-    <v-img :src="this.product3" id="product03Btn" class="ml-auto mr-auto"></v-img>
-    <v-img :src="this.question" id="questionBtn" class="ml-auto mr-auto"></v-img>
-    <v-img :src="this.site" id="siteBtn" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.menu" id="menuBtn" class="ml-auto" @click="changePage('Main')"></v-img>
+    <v-img :src="this.service" id="serviceButton" @click="changePage('Service')" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.product" id="productButton" @click="changePage('Product')" class="ml-auto mr-auto"></v-img>
+    <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
+                            src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
+                            class="enlarge ml-auto mr-auto"
+                            id="product01Btn"
+    >
+      <v-img :src="this.product1" class="ml-auto mr-auto"></v-img>
+    </vue-enlargeable-image>
+    <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_02QT.jpg"
+                            src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_02QT.jpg"
+                            class="enlarge ml-auto mr-auto"
+                            id="product02Btn"
+    >
+      <v-img :src="this.product2" class="ml-auto mr-auto"></v-img>
+    </vue-enlargeable-image>
+    <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg"
+                            src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg"
+                            class="enlarge ml-auto mr-auto"
+                            id="product03Btn"
+    >
+      <v-img :src="this.product3" class="ml-auto mr-auto"></v-img>
+    </vue-enlargeable-image>
+    <v-img :src="this.question" id="questionBtn" @click="changePage('Question')" class="ml-auto mr-auto"></v-img>
+    <v-img :src="this.site" id="siteBtn" @click="redirectSite" class="ml-auto mr-auto"></v-img>
     <v-spacer></v-spacer>
   </v-app>
 </template>
@@ -25,7 +43,16 @@ export default {
     question:'http://pamphlet.ubcn.co.kr/image/roadmap/menu03.png',
     site:'http://pamphlet.ubcn.co.kr/image/roadmap/btn_site.png',
     centerPosition: 'center center'
-  })
+  }),
+  methods:{
+    changePage(menu){
+      console.log('Main > '+menu)
+      this.$emit('change-page',menu,event)
+    },
+    redirectSite(){
+      window.open("http://www.ubcn.co.kr","_blank")
+    }
+  }
 }
 </script>
 
@@ -41,6 +68,7 @@ export default {
   top: 10px;
   background: none;
   background-size: contain;
+  cursor: pointer;
 }
 #serviceButton{
   min-width: 289px;
@@ -48,6 +76,7 @@ export default {
   min-height: 58px;
   max-height: 58px;
   margin-top: 10%;
+  cursor: pointer;
 }
 #productButton{
   max-width: 231px;
@@ -55,6 +84,7 @@ export default {
   min-width: 231px;
   min-height: 67px;
   margin-top: 2%;
+  cursor: pointer;
 }
 #product01Btn{
   max-width: 98px;
@@ -83,6 +113,7 @@ export default {
   min-width: 231px;
   min-height: 68px;
   margin-top: 2%;
+  cursor: pointer;
 }
 #siteBtn{
   max-width: 321px;
@@ -90,6 +121,7 @@ export default {
   min-width: 321px;
   min-height: 28px;
   margin-top: 10%;
+  cursor: pointer;
 }
 #roadMapCard > button {
 

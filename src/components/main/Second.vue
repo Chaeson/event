@@ -1,23 +1,26 @@
 <template>
-<v-main class="fill-height ml-auto mr-auto pa-1" fluid :style="{border:'1px solid black', padding: '0px'}" id="customEnlarge" >
-  <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
-                          src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
-                          class="enlarge"
-  >
-    <v-img :src="this.service" class="fixSize"></v-img>
-  </vue-enlargeable-image>
-  <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_02QT.jpg"
-                          src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_02QT.jpg"
-                          class="enlarge"
-  >
-    <v-img :src="this.service" class="fixSize"></v-img>
-  </vue-enlargeable-image>
-  <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg"
-                          src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg"
-                          class="enlarge"
-  >
-    <v-img :src="this.service" class="fixSize"></v-img>
-  </vue-enlargeable-image>
+<v-main class="fill-height ml-auto mr-auto" fluid :style="{border:'1px solid black', padding: '0px'}" id="customEnlarge" >
+  <div :style="{border :'1px solid red'}" id="wrapEnlarge">
+    <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
+                            src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
+                            class="enlarge"
+    >
+      <v-img :src="this.service" class="fixSize"></v-img>
+    </vue-enlargeable-image>
+    <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_02QT.jpg"
+                            src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_02QT.jpg"
+                            class="enlarge qt"
+    >
+      <v-img :src="this.service" class="fixSize"></v-img>
+    </vue-enlargeable-image>
+    <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg"
+                            src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg"
+                            class="enlarge shop"
+    >
+      <v-img :src="this.service" class="fixSize"></v-img>
+    </vue-enlargeable-image>
+    <v-spacer></v-spacer>
+  </div>
 </v-main>
 </template>
 
@@ -65,7 +68,8 @@ export default {
   max-height: 65px;
   max-width: 270px;
   display: inline;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 #customEnlarge > img{
   display: inline-block;
@@ -73,14 +77,34 @@ export default {
 #customEnlarge{
   width: 100%;
   height: 100%;
-  margin: auto auto;
+}
+#wrapEnlarge{
+  margin-top: 32%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.shop{
+  margin-right: 0%;
+  margin-left: 13.5%;
+}
+.qt{
+  margin-left: 14%;
 }
 </style>
 <style>
 .enlarge.enlargeable-image.active > .full.enlarged{
   position: absolute;
+  max-height: 80%;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
 }
 .enlarge.enlargeable-image.active > .full.enlarging{
   position: absolute;
+  max-height: 80%;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
 }
 </style>

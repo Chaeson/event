@@ -1,6 +1,6 @@
 <template>
-<v-main class="fill-height ml-auto mr-auto" fluid :style="{border:'1px solid black', padding: '0px'}" id="customEnlarge" >
-  <div :style="{border :'1px solid red'}" id="wrapEnlarge">
+<v-main class="fill-height ml-auto mr-auto" fluid :style="{ padding: '0px'}" id="customEnlarge" >
+  <div id="wrapEnlarge">
     <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
                             src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
                             class="enlarge"
@@ -82,14 +82,14 @@ export default {
   margin-top: 32%;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 62%;
 }
 .shop{
   margin-right: 0%;
-  margin-left: 13.5%;
+  margin-left: 15%;
 }
 .qt{
-  margin-left: 14%;
+  margin-left: 15%;
 }
 </style>
 <style>

@@ -1,5 +1,5 @@
 <template>
-  <v-main class="fill-height ml-auto mr-auto" fluid :style="{border:'1px solid black', padding: '0px'}">
+  <v-main class="fill-height ml-auto mr-auto" fluid :style="{ padding: '0px'}">
     <div class="questionFirst">
       <v-text-field class="name" label="이름(직급)" :rules="[rules.required]" v-model="emaildata.template_params.name" type="text"></v-text-field>
       <v-text-field class="company" label="기업/단체명" :rules="[rules.required]" v-model="emaildata.template_params.company" type="text"></v-text-field>
@@ -18,17 +18,25 @@
       <v-img class="policyDetail" @click="viewPolicy"></v-img>
       <v-img class="btnQuestion"></v-img>
     </div>
+    <v-easy-dialog v-model="dialog" persistent >
+      <div class="flex flex-col">
+        <Policy @check-agree="checkAgree"/>
+      </div>
+    </v-easy-dialog>
   </v-main>
 </template>
 
 <script>
 import{ init } from 'emailjs-com';
-import axios from 'axios'
+import axios from 'axios';
+import VEasyDialog from 'v-easy-dialog';
+
 init("user_yIyNcFF8djC4j2KFeDSit");
 export default {
   name: "Third",
   components:{
-    //Policy:()=>import('@/components/main/Policy')
+    Policy:()=>import('@/components/main/Policy'),
+    VEasyDialog
   },
   data:()=>({
     checkBtn:false,
@@ -55,17 +63,17 @@ export default {
     view:''
   }),
   methods:{
-    checkAgree(){
-      this.checkBtn=true
-      this.dialog=false
-    },
-    onClose(){
-      this.dialog=false;
-      console.log('Close...')
-      console.log(this.dialog)
+    checkAgree(menu){
+      if(menu=='Close'){
+        this.checkBtn=false;
+        this.dialog=false;
+      }else{
+        this.checkBtn=true;
+        this.dialog=false;
+      }
     },
     viewPolicy(){
-      this.dialog=true;
+      this.dialog=true
     },
     validCheck(){
       if(this.emaildata.template_params.email=='') {
@@ -134,7 +142,7 @@ export default {
   margin-left: 31%;
 }
 .questionForth{
-  margin-top: 1%;
+  margin-top: 2%;
   height: 10%;
 }
 .checkBtn, .checkHover{

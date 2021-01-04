@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-app-bar :color=mainColor app :clipped-left="true">
+    <v-app-bar :color=mainColor app flat :clipped-left="true">
       <v-btn @click="changePage('Main')" :color=mainColor depressed md="3">
         <!--            <v-img src="@/assets/header/logo.png" alt="UBCn 로고" ></v-img>-->
         <v-img :src="this.img.logo" alt="UBCn 로고" @click="changePage('Main')"></v-img>

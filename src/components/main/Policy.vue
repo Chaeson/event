@@ -3,7 +3,7 @@
     <v-card-title>
       개인정보 보호정책 약관
       <v-spacer></v-spacer>
-      <v-btn color="primary" icon dark @click="onClose">
+      <v-btn color="primary" icon @click="checkAgree('Close')">
         <v-icon>mdi-close-circle</v-icon>
       </v-btn>
     </v-card-title>
@@ -69,7 +69,7 @@
     <v-card-text>
       <v-card-title>
         <v-spacer></v-spacer>
-        <v-btn color="primary" icon dark @click="checkAgree">
+        <v-btn color="primary" icon dark @click="checkAgree('Agree')">
           <v-img src="@/assets/main/btn_a.png" contain></v-img>
         </v-btn>
       </v-card-title>
@@ -81,22 +81,25 @@
 export default {
   name: "Policy",
   data:()=>({
-    dialog:false
+    dialog:true
   }),
   methods:{
-    checkAgree(){
-      this.checkBtn=true
-      this.dialog=false
-    },
-    onClose(){
-      this.dialog=false;
-      console.log('Close...')
-      console.log(this.dialog)
-    },
+    checkAgree(action){
+      if(action == 'Close')
+        this.$emit('check-agree',action,event);
+      else
+        this.$emit('check-agree',action,event);
+    }
   }
 }
 </script>
 
-<style scoped>
-
+<style>
+#policyCard{
+  max-width: 60%;
+  min-width: 60%;
+  max-height: 200%;
+  min-height: 200%;
+  position: fixed;
+}
 </style>

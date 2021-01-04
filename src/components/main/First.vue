@@ -1,6 +1,6 @@
 <template>
   <v-main  class="fill-height ml-auto mr-auto pa-0"
-           :style="{border: '1px solid cyan', padding: '0px'}">
+           :style="{ padding: '0px'}">
     <v-img :src="this.serviceDetail"
            id="serviceDetail"
            contain

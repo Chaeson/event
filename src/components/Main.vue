@@ -1,12 +1,12 @@
 <template>
   <hooper :vertical="true" :centerMode="true" :trim-white-space="false" :mouse-drag="false" id="mainPage">
-    <slide style="border: 1px solid red ;" class="customBack">
+    <slide class="customBack">
       <First @change-page="changePage" class="bg-first"/>
     </slide>
-    <slide style="border: 1px solid green;" class="customBack">
+    <slide class="customBack">
       <Second class="bg-second" />
     </slide>
-    <slide style="border: 1px solid blue ;" class="customBack">
+    <slide class="customBack">
       <Third class="bg-third"/>
     </slide>
     <hooper-navigation slot="hooper-addons" id="mainNavi"></hooper-navigation>
@@ -32,15 +32,6 @@ export default {
   },
   data:()=>({
     text:'메인 페이지',
-    first:{
-      main:{
-        backgroundImg:'@/assets/main/bg_01main_01.jpg',
-        padding:'0px'
-      }
-    },
-    service:'http://pamphlet.ubcn.co.kr/pamphlet/image/main/btn_view.png',
-    third:{
-    }
   }),
   mounted() {
     document.addEventListener('scroll', this.handleScroll)
@@ -76,7 +67,7 @@ export default {
 </style>
 <style>
 .hooper {
-  height: 90vh;
+  height: 91vh;
 }
 #mainNavi > .hooper-prev{
   left: 50%;

@@ -1,6 +1,6 @@
 <template>
   <hooper :vertical="true" :center-mode="true" >
-    <slide style="border: 1px solid red ;">
+    <slide>
       <Third class="bg-third" />
     </slide>
   </hooper>

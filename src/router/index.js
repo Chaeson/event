@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 import Pamphlet from "@/views/Pamphlet";
+import Policy from "@/components/main/Policy";
 Vue.use(VueRouter);
 
 const routes = [
@@ -11,9 +11,9 @@ const routes = [
     component: Pamphlet
   },
   {
-    path: "/test",
-    name: "Home",
-    component: Home
+    path: "/Policy",
+    name: "Policy",
+    component: Policy
   },
   {
     path: "/about",

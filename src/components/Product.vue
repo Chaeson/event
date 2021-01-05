@@ -1,5 +1,5 @@
 <template>
-  <hooper :vertical="false" :centerMode="true" :trim-white-space="false" :infinite-scroll="true" id="product">
+  <hooper :vertical="false" :centerMode="true" :trim-white-space="false" :mouse-drag="false" :infinite-scroll="true" id="product">
     <slide class="bg-first">
 
     </slide>
@@ -54,12 +54,12 @@ export default {
   right: 10%;
 }
 #productNavi > button.hooper-prev{
-  left: 11%;
+  left: 0%;
   background: url('http://pamphlet.ubcn.co.kr/image/product/btn_scroll2_r.png') no-repeat center center;
   background-size: contain;
 }
 #productNavi > button.hooper-next{
-  right: 11%;
+  right: 0%;
   background: url('http://pamphlet.ubcn.co.kr/image/product/btn_scroll2_l.png') no-repeat center center;
   background-size: contain;
 }

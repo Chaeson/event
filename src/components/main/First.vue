@@ -41,7 +41,7 @@ export default {
   max-width: 400px;
   background-size: contain;
   cursor: pointer;
-  margin-top: 31%;
+  margin-top: 32%;
   margin-left: 17%;
 }
 </style>

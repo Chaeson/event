@@ -1,6 +1,6 @@
 <template :style="{backgroundColor: this.headerColor}">
 <!--  <v-container fluid ma-0 pa-0 fill-height :style="{ backgroundColor: this.headerColor}">-->
-  <v-main ma-0 pa-0 :style="{ padding:this.paddingVal, backgroundColor:this.headerColor}">
+  <v-main ma-0 pa-0 :style="{ padding:this.paddingVal, backgroundColor:this.backColor}">
     <Header @change-page="changePage" v-bind:mainColor="headerColor" v-show="this.headerShow"/>
     <component @change-page="changePage" v-bind:is="view" style="padding-top: 0; padding-left: 0;"/>
   </v-main>
@@ -23,17 +23,24 @@ export default {
     view: 'Main',
     headerColor:'#8DBDE5',
     headerShow:'true',
-    paddingVal:'64px 0px 0px'
+    paddingVal:'64px 0px 0px',
+    backColor:'#8DBDE5'
   }),
   methods:{
     changePage(menu){
       console.log('??'+menu)
       console.log('??'+this.headerColor)
-      if(menu=='Service' || menu=='Product')
+      if(menu=='Service' ){
         this.headerColor='#999999'
-      else
-        this.headerColor='#8DBDE5'
-
+        this.backColor='#AFD6F7'
+      }
+      else if (menu=='Main' || menu=='Question'){
+        this.headerColor = '#8DBDE5'
+        this.backColor='#8DBDE5'
+      }else if(menu=='Product'){
+        this.headerColor='#999999'
+        this.backColor='#FFFFFF'
+      }
       if(menu=='RoadMap'){
         this.headerShow=false
         this.paddingVal='0px'

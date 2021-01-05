@@ -1,5 +1,5 @@
 <template>
-  <hooper :vertical="false" :centerMode="true" :trim-white-space="false" id="service">
+  <hooper :vertical="false" :centerMode="true" :mouse-drag="false" :trim-white-space="false" id="service">
     <slide class="bg-first">
 
     </slide>
@@ -60,12 +60,12 @@ export default {
   right: 10%;
 }
 #serviceNavi > button.hooper-prev{
-  left: 11%;
+  left: 0%;
   background: url('http://pamphlet.ubcn.co.kr/image/service/btn_scroll_r.png') no-repeat center center;
   background-size: contain;
 }
 #serviceNavi > button.hooper-next{
-  right: 11%;
+  right: 0%;
   background: url('http://pamphlet.ubcn.co.kr/image/service/btn_scroll_l.png') no-repeat center center;
   background-size: contain;
 }

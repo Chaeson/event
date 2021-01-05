@@ -16,7 +16,7 @@
       <v-img class="checkHover" v-show="this.checkBtn"></v-img>
       <v-img class="policyTxt"></v-img>
       <v-img class="policyDetail" @click="viewPolicy"></v-img>
-      <v-img class="btnQuestion"></v-img>
+      <v-img class="btnQuestion" @click="sendEmail"></v-img>
     </div>
     <v-easy-dialog v-model="dialog" persistent >
       <div class="flex flex-col">
@@ -31,7 +31,11 @@ import{ init } from 'emailjs-com';
 import axios from 'axios';
 import VEasyDialog from 'v-easy-dialog';
 
+//sales@ubcn.co.kr
 init("user_yIyNcFF8djC4j2KFeDSit");
+//chae@ubcn.co.kr
+//init("user_HJ9MYQGJu784JbUNnPsfU");
+
 export default {
   name: "Third",
   components:{
@@ -137,9 +141,13 @@ export default {
 .questionFirst, .questionSecond ,.questionThird, .questionForth{
   margin-left: 30%;
 }
+.questionSecond{
+  margin-top: 0.5%;
+}
 .questionThird{
   width: 100%;
   margin-left: 31%;
+  margin-top: 1%;
 }
 .questionForth{
   margin-top: 2%;
@@ -184,5 +192,6 @@ export default {
   height: 75px;
   margin-left: 10%;
   position: fixed;
+  cursor: pointer;
 }
 </style>

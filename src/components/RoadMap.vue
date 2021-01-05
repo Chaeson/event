@@ -1,6 +1,6 @@
 <template>
   <v-app :style="{ padding: '0px'}">
-    <v-img :src="this.menu" id="menuBtn" class="ml-auto" @click="changePage('Main')"></v-img>
+    <v-img :src="this.menu" id="menuBtn" @click="changePage('Main')"></v-img>
     <v-img :src="this.service" id="serviceButton" @click="changePage('Service')" class="ml-auto mr-auto"></v-img>
     <v-img :src="this.product" id="productButton" @click="changePage('Product')" class="ml-auto mr-auto"></v-img>
     <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
@@ -69,6 +69,7 @@ export default {
   background: none;
   background-size: contain;
   cursor: pointer;
+  margin-left: 96%;
 }
 #serviceButton{
   min-width: 289px;

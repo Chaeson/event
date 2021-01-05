@@ -1,5 +1,5 @@
 <template>
-  <hooper :vertical="true" :centerMode="true" :trim-white-space="false" :mouse-drag="false" id="mainPage">
+  <hooper :vertical="true" :centerMode="true" :trim-white-space="false" :mouse-drag="false">
     <slide class="customBack">
       <First @change-page="changePage" class="bg-first"/>
     </slide>
@@ -67,7 +67,10 @@ export default {
 </style>
 <style>
 .hooper {
-  height: 91vh;
+  height: 90vh;
+}
+.hooper-list{
+  border: 0px solid cyan;
 }
 #mainNavi > .hooper-prev{
   left: 50%;

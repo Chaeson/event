@@ -7,6 +7,7 @@
         <v-icon>mdi-close-circle</v-icon>
       </v-btn>
     </v-card-title>
+    <v-divider></v-divider>
     <v-card-text>
       <v-card-subtitle>
         ■ 개인정보의 수집 및 이용 목적<br/>

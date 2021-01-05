@@ -79,7 +79,7 @@ export default {
   height: 100%;
 }
 #wrapEnlarge{
-  margin-top: 32%;
+  margin-top: 33%;
   margin-left: auto;
   margin-right: auto;
   width: 62%;

@@ -9,6 +9,9 @@
     <slide class="bg-third">
 
     </slide>
+    <slide class="bg-forth">
+
+    </slide>
     <hooper-navigation slot="hooper-addons" id="productNavi"></hooper-navigation>
   </hooper>
 </template>
@@ -43,6 +46,10 @@ export default {
 }
 .bg-third {
   background: url('http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg') no-repeat center center;
+  background-size: contain;
+}
+.bg-forth {
+  background: url('http://pamphlet.ubcn.co.kr/image/product/03sub_04Access.jpg') no-repeat center center;
   background-size: contain;
 }
 </style>

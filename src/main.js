@@ -5,7 +5,10 @@ import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
 import EnlargeableImage from '@diracleo/vue-enlargeable-image';
+import stack from 'vue-tantan-stack';
+
 Vue.use(EnlargeableImage);
+Vue.use(stack);
 
 Vue.config.productionTip = false;
 new Vue({

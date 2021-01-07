@@ -3,23 +3,28 @@
   <div id="wrapEnlarge">
     <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
                             src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg"
-                            class="enlarge"
+                            class="enlarge cube"
     >
-      <v-img :src="this.service" class="fixSize"></v-img>
+      <v-img :src="this.cube" class="fixSize"></v-img>
     </vue-enlargeable-image>
     <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_02QT.jpg"
                             src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_02QT.jpg"
-                            class="enlarge qt"
+                            class="enlarge"
     >
-      <v-img :src="this.service" class="fixSize"></v-img>
+      <v-img :src="this.qt" class="fixSize"></v-img>
     </vue-enlargeable-image>
     <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg"
                             src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_03Shop.jpg"
-                            class="enlarge shop"
+                            class="enlarge"
     >
-      <v-img :src="this.service" class="fixSize"></v-img>
+      <v-img :src="this.shop" class="fixSize"></v-img>
     </vue-enlargeable-image>
-    <v-spacer></v-spacer>
+    <vue-enlargeable-image  src="http://pamphlet.ubcn.co.kr/image/product/03sub_04Access.jpg"
+                            src_large="http://pamphlet.ubcn.co.kr/image/product/03sub_04Access.jpg"
+                            class="enlarge"
+    >
+      <v-img :src="this.access" class="fixSize"></v-img>
+    </vue-enlargeable-image>
   </div>
 </v-main>
 </template>
@@ -30,8 +35,10 @@ export default {
   data:()=>({
     showProduct:false,
     dialog:false,
-    service:'http://pamphlet.ubcn.co.kr/pamphlet/image/main/btn_view.png',
-    cube:'http://pamphlet.ubcn.co.kr/image/product/03sub_01Cube.jpg',
+    cube:'http://pamphlet.ubcn.co.kr/image/product/0_1cube.png',
+    qt:'http://pamphlet.ubcn.co.kr/image/product/0_2qt.png',
+    shop:'http://pamphlet.ubcn.co.kr/image/product/0_3shop.png',
+    access:'http://pamphlet.ubcn.co.kr/image/product/0_4acess.png',
   }),
   comments:{
   },
@@ -55,21 +62,19 @@ export default {
 
 <style scoped>
 .fixSize{
-  min-height: 65px;
-  min-width: 270px;
-  max-height: 65px;
-  max-width: 270px;
-  cursor: pointer;
+  min-height: 100%;
+  min-width: 70%;
+  max-height: 100%;
+  max-width: 70%;
+  cursor: zoom-in;
   background-size: contain;
 }
 .enlarge{
-  min-height: 65px;
-  min-width: 270px;
-  max-height: 65px;
-  max-width: 270px;
-  display: inline;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-grid;
+  max-width: 370px;
+}
+.cube{
+  margin-left: 2%;
 }
 #customEnlarge > img{
   display: inline-block;
@@ -79,17 +84,10 @@ export default {
   height: 100%;
 }
 #wrapEnlarge{
-  margin-top: 33%;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  width: 62%;
-}
-.shop{
-  margin-right: 0%;
-  margin-left: 15%;
-}
-.qt{
-  margin-left: 15%;
+  width: 80%;
 }
 </style>
 <style>

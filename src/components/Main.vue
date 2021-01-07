@@ -57,7 +57,7 @@ export default {
   background-size: contain;
 }
 .bg-second {
-  background: url('http://pamphlet.ubcn.co.kr/image/main/bg_01main_02.jpg') no-repeat center center;
+  background-color: #8DBDE5;
   background-size: contain;
 }
 .bg-third {
